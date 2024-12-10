@@ -13,12 +13,12 @@ public class Jornalentry {
 
     private HashMap<Long,Entries> jornalEntry = new HashMap<>();
 
-    @GetMapping
+    @GetMapping("/get")
     public List<Entries> getAll(){
         return new ArrayList<>(jornalEntry.values());
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public boolean createEntry(@RequestBody Entries myEntry){
         jornalEntry.put(myEntry.getId(),myEntry);
         return  true;
